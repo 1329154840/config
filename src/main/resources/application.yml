@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: config
   cloud:
     config:
       server:
@@ -8,10 +6,13 @@ spring:
           uri: https://github.com/1329154840/config-file.git
           username: 1329154840@qq.com
           password: 858819961221tony
-          basedir: src/main/resources/config-file #/home/scp/config-file
+          basedir:  src/main/resources/config-file #src/main/resources/config-file
           search-paths: client
           clone-on-start: true
           force-pull: true
+
+  application:
+    name: config
 #  rabbitmq:
 #    host: 127.0.0.1
 #    port: 5672
@@ -21,8 +22,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
-#  instance:
-#    prefer-ip-address: true
-#    instance-id: 114.115.130.42:${spring.application.name}:${server.port}
+  instance:
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+    ip-address: 127.0.0.1
 server:
   port: 1111
