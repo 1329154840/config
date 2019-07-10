@@ -4,8 +4,8 @@ spring:
       server:
         git:
           uri: https://github.com/1329154840/config-file.git
-          username: 1329154840@qq.com
-          password: 858819961221tony
+          username: xxxxx@qq.com
+          password: xxxxxxx
           basedir:  src/main/resources/config-file #src/main/resources/config-file
           search-paths: client
           clone-on-start: true
